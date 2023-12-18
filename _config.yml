@@ -60,6 +60,8 @@ exclude: null
 ignore: null
 theme: vivia
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/faketuna/blog.f2a.dev
+  branch: gh-pages
 archive_generator:
   per_page: 0
