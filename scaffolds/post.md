@@ -1,5 +1,8 @@
 ---
 title: {{ title }}
-date: {{ date }}
+category:
+    - dummy
 tags:
+    - dummy
+date: {{ date }}
 ---
