@@ -3,7 +3,7 @@ menu:
   Home: /
   Archives: /archives
   About: /about
-rss: /atom.xml
+rss: 
 
 home:
   style: default           # default, detail
