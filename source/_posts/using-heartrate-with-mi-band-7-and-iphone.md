@@ -54,5 +54,24 @@ pulsoidのアカウント作成等は他のデバイスでやるのと同じ方�
 
 #### 7. おわり
 
-情報元
+## 情報元
 https://www.reddit.com/r/miband/comments/vs28ky/mi_band_7_heart_rate_data_sharing_isnt_working/
+
+---
+
+# 2023-12-20 追記
+
+## ワークアウト中でなくても計測する
+
+[Lappy_Error404](https://twitter.com/Lappy_Error404)さん情報ありがとうございます!
+
+1. スマートウォッチの方でなんでも良いのでワークアウトを開始しておく
+2. Zepp appの方でワークアウトを開始する
+3. Pulsoidに繋げる
+4. zepp app -> スマートウォッチの順番でワークアウトを切る
+
+これで次回以降はPulsoidからいつものようにスマートウォッチに繋げるだけで心拍数を取ってくるようになる
+
+ただしBluetoothとかZeppapp等でスマートウォッチの検出ができなくなると再度やり直す必要あり
+
+もし途中で接続できなくなった場合はスマートウォッチ側でワークアウトを開始した後にPulsoid側で再接続すると直る事がある
