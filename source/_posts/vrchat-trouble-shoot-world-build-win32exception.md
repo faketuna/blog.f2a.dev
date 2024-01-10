@@ -1,5 +1,5 @@
 ---
-title: win32exceptionが出てBuild & Test new Buildがうまく行かない
+title: VRChatのワールドをテストしたい時にwin32exceptionが出てBuild & Test new Buildがうまく行かない
 category:
   - Unity
 tags:
