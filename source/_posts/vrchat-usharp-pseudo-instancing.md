@@ -80,6 +80,8 @@ GameObject obj = GameObject.Find("InstantiateTestTarget");
 今回は10個作るので以下のようなコードで配列を作りオブジェクトを保持します。
 
 ```csharp
+GameObject[] objs = new GameObject[10];
+
 for(int i = 0; i < objs.Length; i++) {
     objs[i] = Instantiate(obj);
 }
