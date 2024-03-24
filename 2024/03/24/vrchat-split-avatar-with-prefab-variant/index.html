@@ -14,7 +14,7 @@
   
 
   
-  <title>アバタービルド時にArgumentException: Getting control ?’s position in a group with only ? controls when doing repaintが出た時の対処方法 | tunaの雑記</title>
+  <title>アバターをPrefab Variant化してギミックはそのままに衣装ごとにアバターを分ける | tunaの雑記</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -24,21 +24,21 @@
     
   
 
-  <meta name="description" content="注意!!    以下の内容を行う前に必ずプロジェクトのバックアップを取ってください。また、以下の手順を行って発生したいかなる損害も責任は負いません。 また以下の内容はトラブルの改善を約束するものではありません。 キセテネを使用して衣装導入した方は対処法4から読んでください    新しく衣装を導入した際などにこのエラーが出ることがあるらしい。たまたま周りの方が遭遇していたため気になって調べてみたの">
+  <meta name="description" content="ギミックは共有しつつも容量削減等の理由で洋服単位でアバターを分けたいって思ったことありますよね? 私はあります。 その悩みを解決する方法を今日は書いていきたいと思います。 Prefab Variantとは?Unity公式では以下のように説明されています。  プレハブバリアントは、一揃いの事前定義されたプレハブのバリエーションを使用したい場合に便利です。  どういう事？ってなるかもしれませんが要は、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="アバタービルド時にArgumentException: Getting control ?’s position in a group with only ? controls when doing repaintが出た時の対処方法">
-<meta property="og:url" content="https://blog.f2a.dev/2023/12/19/vrchat-trouble-shoot-argument-exception-getting-control-potision/index.html">
+<meta property="og:title" content="アバターをPrefab Variant化してギミックはそのままに衣装ごとにアバターを分ける">
+<meta property="og:url" content="https://blog.f2a.dev/2024/03/24/vrchat-split-avatar-with-prefab-variant/index.html">
 <meta property="og:site_name" content="tunaの雑記">
-<meta property="og:description" content="注意!!    以下の内容を行う前に必ずプロジェクトのバックアップを取ってください。また、以下の手順を行って発生したいかなる損害も責任は負いません。 また以下の内容はトラブルの改善を約束するものではありません。 キセテネを使用して衣装導入した方は対処法4から読んでください    新しく衣装を導入した際などにこのエラーが出ることがあるらしい。たまたま周りの方が遭遇していたため気になって調べてみたの">
+<meta property="og:description" content="ギミックは共有しつつも容量削減等の理由で洋服単位でアバターを分けたいって思ったことありますよね? 私はあります。 その悩みを解決する方法を今日は書いていきたいと思います。 Prefab Variantとは?Unity公式では以下のように説明されています。  プレハブバリアントは、一揃いの事前定義されたプレハブのバリエーションを使用したい場合に便利です。  どういう事？ってなるかもしれませんが要は、">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/faketuna.png">
-<meta property="article:published_time" content="2023-12-18T16:33:37.000Z">
-<meta property="article:modified_time" content="2024-03-20T23:53:41.229Z">
+<meta property="article:published_time" content="2024-03-24T07:47:56.000Z">
+<meta property="article:modified_time" content="2024-03-24T09:52:00.971Z">
 <meta property="article:author" content="faketuna">
+<meta property="article:tag" content="Unity">
 <meta property="article:tag" content="VRChat">
-<meta property="article:tag" content="troubleshoot">
-<meta property="article:tag" content="error">
-<meta property="article:tag" content="unity">
+<meta property="article:tag" content="Prefab">
+<meta property="article:tag" content="Prefab variant">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://github.com/faketuna.png">
   
@@ -265,7 +265,7 @@
     <div id="content-body">
        
 
-<article id="post-vrchat-trouble-shoot-argument-exception-getting-control-potision" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-vrchat-split-avatar-with-prefab-variant" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -278,7 +278,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        アバタービルド時にArgumentException: Getting control ?’s position in a group with only ? controls when doing repaintが出た時の対処方法
+        アバターをPrefab Variant化してギミックはそのままに衣装ごとにアバターを分ける
       </h1>
     
   
@@ -286,7 +286,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-12-18T16:33:37.000Z" itemprop="datePublished">2023-12-19</time>
+  <time class="dt-published" datetime="2024-03-24T07:47:56.000Z" itemprop="datePublished">2024-03-24</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -297,65 +297,94 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            590 words 
+            1.4k words 
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VRChat/" rel="tag">VRChat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/error/" rel="tag">error</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unity/" rel="tag">unity</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Prefab/" rel="tag">Prefab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Prefab-variant/" rel="tag">Prefab variant</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity/" rel="tag">Unity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VRChat/" rel="tag">VRChat</a></li></ul>
 
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          
-<h1 style="color: #e35c5c">注意!!</h1>
-
-
-
-<h2 style="color: #e35c5c">以下の内容を行う前に必ずプロジェクトのバックアップを取ってください。また、以下の手順を行って発生したいかなる損害も責任は負いません。</h2>
-<h2 style="color: #e35c5c">また以下の内容はトラブルの改善を約束するものではありません。</h2>
-<h2 style="color: #59b3e3">キセテネを使用して衣装導入した方は対処法4から読んでください</h2>
-
-
-
-<p>新しく衣装を導入した際などにこのエラーが出ることがあるらしい。たまたま周りの方が遭遇していたため気になって調べてみたのでメモ</p>
-<hr>
-<h2 id="対処法1"><a href="#対処法1" class="headerlink" title="対処法1"></a>対処法1</h2><p>とりあえずバックアップからやり直してみようのコーナー</p>
+          <p>ギミックは共有しつつも容量削減等の理由で洋服単位でアバターを分けたいって思ったことありますよね? 私はあります。</p>
+<p>その悩みを解決する方法を今日は書いていきたいと思います。</p>
+<h2 id="Prefab-Variantとは"><a href="#Prefab-Variantとは" class="headerlink" title="Prefab Variantとは?"></a>Prefab Variantとは?</h2><p>Unity公式では以下のように説明されています。</p>
+<blockquote>
+<p>プレハブバリアントは、一揃いの事前定義されたプレハブのバリエーションを使用したい場合に便利です。</p>
+</blockquote>
+<p>どういう事？ってなるかもしれませんが要は、中身はベースのPrefabとほぼ一緒だけど一部だけ変えたい時とかに有用ってことです。</p>
+<p>今回であればアバターのギミックや髪の色, 素体等は共通のまま、洋服だけ変えたい… けど全部に個別にやるとなると面倒くさい！そんな時に役立ちます。</p>
+<h2 id="なにはともあれやってみよう"><a href="#なにはともあれやってみよう" class="headerlink" title="なにはともあれやってみよう"></a>なにはともあれやってみよう</h2><p>アバターは<strong>わこーのあとりえ</strong>さんの<a target="_blank" rel="noopener" href="https://booth.pm/ja/items/4360868">レイ</a>ちゃんを使用させていただきました。 みんなもレイちゃんになろう！！</p>
+<h3 id="1-改変用のPrefabを作る"><a href="#1-改変用のPrefabを作る" class="headerlink" title="1. 改変用のPrefabを作る"></a>1. 改変用のPrefabを作る</h3><p>まずは最初にベースとなる改変用のPrefabを作りましょう。 </p>
+<p>作ると言ってもやることはものすごく簡単です。</p>
 <ol>
-<li>バックアップを復元する</li>
-<li>再度同じことをする</li>
+<li>元のアバターをヒエラルキーに入れる</li>
+<li>ヒエラルキーにあるアバターをPrefabを保存したい場所でドラッグアンドドロップ</li>
 </ol>
-<p>それでもだめだった時は2へどうぞ</p>
-<hr>
-<h2 id="対処法2"><a href="#対処法2" class="headerlink" title="対処法2"></a>対処法2</h2><ol>
-<li>改変をする前とエラーが発生するようになった間に入れたゲームオブジェクトのInspectorを確認</li>
-<li>Skinned Mesh RendererのMaterialsプロパティを確認</li>
-<li>プロパティに0が入っていた場合はゲームオブジェクトを削除する</li>
+<img style=" display: inline-block" src="/images/posts/2024/03/create-prefab.gif">
+
+
+<h3 id="2-作ったPrefabを改変する"><a href="#2-作ったPrefabを改変する" class="headerlink" title="2. 作ったPrefabを改変する"></a>2. 作ったPrefabを改変する</h3><p>髪の色やアクセサリーなど、ベースとなる部分を改変していきます。</p>
+<p>今回自分は、髪飾りとパーティクルを追加し、髪と服の色を変更しました。</p>
+<img style=" display: inline-block" src="/images/posts/2024/03/ray-after-edit.png">
+
+
+<h3 id="3-改変したPrefabを上書き保存する"><a href="#3-改変したPrefabを上書き保存する" class="headerlink" title="3. 改変したPrefabを上書き保存する"></a>3. 改変したPrefabを上書き保存する</h3>
+<p style="color: #e35c5c">注意: 強制ではありませんが、アバターのオブジェクトのチェックは入れたままOverrideするのをおすすめします。</p>
+
+
+<ol>
+<li>アバターのオブジェクトを選択</li>
+<li>インスペクタ上部に表示されている<code>Overrides</code>をクリック</li>
+<li><code>Apply All</code>をクリック</li>
 </ol>
-<p>もしそのオブジェクトが動作に必要もしくは服の本体などである場合は3へどうぞ</p>
+<img style=" display: inline-block" src="/images/posts/2024/03/override-base-prefab-1.gif">
 
-<img style=" display: inline-block" src="/images/posts/2023/12/vrchat-ex-method-2.png">
-
-
-<hr>
-<h2 id="対処法3"><a href="#対処法3" class="headerlink" title="対処法3"></a>対処法3</h2><ol>
-<li>改変をする前とエラーが発生するようになった間に入れたゲームオブジェクトのInspectorを確認</li>
-<li>Skinned Mesh RendererのMaterialsプロパティを確認</li>
-<li>Materialsがしっかり設定されていることを確認</li>
-<li>Meshがmissingになっていることを確認</li>
-<li>対応するメッシュを設定してあげるか、再度インポートして正常な状態の復元を試みる</li>
+<h3 id="4-洋服なしのPrefab-Variantを作る-任意"><a href="#4-洋服なしのPrefab-Variantを作る-任意" class="headerlink" title="4. 洋服なしのPrefab Variantを作る (任意)"></a>4. 洋服なしのPrefab Variantを作る (任意)</h3><p>これは個人の自由ですが、自分はDLサイズやポリゴン数, テクスチャメモリの使用量を減らすために別の洋服を入れる場合はデフォルトの洋服を消しています。</p>
+<p>入れっぱなしでもいいかな～って人は<code>5</code>まで飛ばしていただいて構いません。</p>
+<ol>
+<li>保存したPrefabファイルを右クリック</li>
+<li>Create -&gt; Prefab Variantを選択</li>
+<li>わかりやすい名前をつけておく</li>
+<li>洋服のメッシュを消す</li>
+<li>Prefabを上書き保存する</li>
 </ol>
+<img style=" display: inline-block" src="/images/posts/2024/03/create-variant-with-no-clothe.gif">
 
-<img style=" display: inline-block" src="/images/posts/2023/12/vrchat-ex-method-3.png">
+<h3 id="5-ベースとなるPrefabからPrefab-Variantを作成する"><a href="#5-ベースとなるPrefabからPrefab-Variantを作成する" class="headerlink" title="5. ベースとなるPrefabからPrefab Variantを作成する"></a>5. ベースとなるPrefabからPrefab Variantを作成する</h3><p>4を行った方は4で作ったPrefab Variantを、4を飛ばした方は1で作ったPrefabを選択してください。</p>
+<ol>
+<li>ベースのPrefabファイルを右クリック</li>
+<li>Create -&gt; Prefab Variantを選択</li>
+<li>わかりやすい名前をつけておく。 今回は<code>Ray Variant Jersey</code>とします。</li>
+</ol>
+<img style=" display: inline-block" src="/images/posts/2024/03/create-variant-for-new-clothe.gif">
 
+<h3 id="6-作ったPrefab-Variantに洋服を着せる"><a href="#6-作ったPrefab-Variantに洋服を着せる" class="headerlink" title="6. 作ったPrefab Variantに洋服を着せる"></a>6. 作ったPrefab Variantに洋服を着せる</h3><p>作ったPrefab Variantをヒエラルキーに入れ、普段通り洋服を入れます。 (洋服は<strong>かぷちや</strong>さんの<a target="_blank" rel="noopener" href="https://capettiya.booth.pm/items/4782886">ねこねこじゃーじ</a>を使用させていただきました)</p>
+<p>Modular Avatar対応衣装であればポン入れ、その他のツールであればツールの使い方通りに導入すれば完了です。</p>
+<img style=" display: inline-block" src="/images/posts/2024/03/ray-after-edit-2.png">
 
-<hr>
-<h2 id="対処法4"><a href="#対処法4" class="headerlink" title="対処法4"></a>対処法4</h2><p>もしもキセテネ使ってるなら…</p>
-<p>キセテネを使用して洋服を着せた後に、洋服側の中に残る子オブジェクトが存在しないarmatureが残っていることがあります。<br>この残ったarmatureを削除すると治る可能性があります。</p>
+<h3 id="7-あれ-ギミックは…"><a href="#7-あれ-ギミックは…" class="headerlink" title="7. あれ? ギミックは…?"></a>7. あれ? ギミックは…?</h3><p>さて… 一通りの改変が終わり、まだギミックを入れてない事に気づいたと思います。</p>
+<p>ここからが、Prefab Variantが真価を発揮するときです。</p>
+<h3 id="8-ベースのPrefabにギミックを追加する。"><a href="#8-ベースのPrefabにギミックを追加する。" class="headerlink" title="8. ベースのPrefabにギミックを追加する。"></a>8. ベースのPrefabにギミックを追加する。</h3><p>今回は、<strong>まるるの魔法雑貨屋さん</strong>の<a target="_blank" rel="noopener" href="https://booth.pm/ja/items/5001784">AvatarBasicTool - ABT</a>を導入します。</p>
+<p>基本的にどんなギミックでも、改変対象のアバターに対応しているものであれば大丈夫です。(多分 きっと Maybe Probably)</p>
+<ol>
+<li>ベースのPrefabのオブジェクトに任意のギミック(今回はABT)をドラッグアンドドロップ</li>
+<li>アバターのオブジェクトを選択</li>
+<li>インスペクタ上部に表示されている<code>Overrides</code>をクリック</li>
+<li><code>Apply All</code>をクリック</li>
+</ol>
+<img style=" display: inline-block" src="/images/posts/2024/03/add-gimmick-to-base-prefab.gif">
 
-<img style=" display: inline-block" src="/images/posts/2023/12/vrchat-ex-method-kisetene.png">
+<h3 id="9-Prefab-Variantの方にも変更が適用されているか確認する"><a href="#9-Prefab-Variantの方にも変更が適用されているか確認する" class="headerlink" title="9. Prefab Variantの方にも変更が適用されているか確認する"></a>9. Prefab Variantの方にも変更が適用されているか確認する</h3><ol>
+<li>Prefab Variant(今回の場合は<code>Ray Variant Jersey</code>)のオブジェクトをクリック</li>
+<li>任意のギミック(今回はABT)が導入されていればOK!</li>
+</ol>
+<img style=" display: inline-block" src="/images/posts/2024/03/add-gimmick-confirm.gif">
 
-
-<h1 id="参考元"><a href="#参考元" class="headerlink" title="参考元"></a>参考元</h1><p><a target="_blank" rel="noopener" href="https://prfac.com/vrm-export-error/">https://prfac.com/vrm-export-error/</a></p>
+<h3 id="10-アップロード"><a href="#10-アップロード" class="headerlink" title="10. アップロード"></a>10. アップロード</h3><p>後は、普段通りにアバターのサムネイルや名前を設定してアップロードするだけです！</p>
+<p>今後ベースのPrefabからギミックを追加&#x2F;更新&#x2F;削除した場合は、Prefab Variantのアバターをアップロードし直すだけで変更が適用されます。</p>
+<h3 id="おわり"><a href="#おわり" class="headerlink" title="おわり"></a>おわり</h3><p>Prefab Variantを使うと、ベースのPrefabをいじるだけでそこから派生したPrefab Variant全てに変更を適用できちゃうのでまじで時短できてたすかる。</p>
+<p>みんなもPrefab Variantを使って、洋服が大量に入ってて超重い女から重い女になりましょう。</p>
 
         
       </div>
@@ -368,27 +397,22 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="/2023/12/22/github-forget-organization-notification/"
-      title="GitHubでOrganizationの通知を有効にし忘れてIssueを1ヶ月放置した話"
+  <a class="article-nav-btn left  disabled "
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
-      
-        GitHubでOrganizationの通知を有効にし忘れてIssueを1ヶ月放置した話
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2023/12/18/using-heartrate-with-mi-band-7-and-iphone/"
-      title="mi band 7(Xiaomi smart band 7)とiPhoneでpulsoidに心拍数を送る方法"
+      href="/2024/02/26/vrchat-avatar-osc-not-work/"
+      title="VRChatで既存アバターに追加したOSCギミックが動かない！"
      >
 
     <p class="title-text">
       
-        mi band 7(Xiaomi smart band 7)とiPhoneでpulsoidに心拍数を送る方法
+        VRChatで既存アバターに追加したOSCギミックが動かない！
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
