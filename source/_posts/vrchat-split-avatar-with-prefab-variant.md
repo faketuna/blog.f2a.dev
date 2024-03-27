@@ -14,6 +14,23 @@ date: 2024-03-24 16:47:56
 
 その悩みを解決する方法を今日は書いていきたいと思います。
 
+## 目次
+
+- [目次](#目次)
+- [Prefab Variantとは?](#Prefab-Variantとは)
+- [なにはともあれやってみよう](#なにはともあれやってみよう)
+  - [1. 改変用のPrefabを作る](#1-改変用のPrefabを作る)
+  - [2. 作ったPrefabを改変する](#2-作ったPrefabを改変する)
+  - [3. 改変したPrefabを上書き保存する](#3-改変したPrefabを上書き保存する)
+  - [4. 洋服なしのPrefab Variantを作る (任意)](#4-洋服なしのPrefab-Variantを作る-任意)
+  - [5. ベースとなるPrefabからPrefab Variantを作成する](#5-ベースとなるPrefabからPrefab-Variantを作成する)
+  - [6. 作ったPrefab Variantに洋服を着せる](#6-作ったPrefab-Variantに洋服を着せる)
+  - [7. あれ? ギミックは...?](#7-あれ-ギミックは)
+  - [8. ベースのPrefabにギミックを追加する。](#8-ベースのPrefabにギミックを追加する)
+  - [9. Prefab Variantの方にも変更が適用されているか確認する](#9-Prefab-Variantの方にも変更が適用されているか確認する)
+  - [10. アップロード](#10-アップロード)
+  - [おわり](#おわり)
+
 ## Prefab Variantとは?
 
 Unity公式では以下のように説明されています。
@@ -36,6 +53,7 @@ Unity公式では以下のように説明されています。
 
 1. 元のアバターをヒエラルキーに入れる
 2. ヒエラルキーにあるアバターをPrefabを保存したい場所でドラッグアンドドロップ
+3. Original Prefabとして保存
 
 <img style=" display: inline-block" src="/images/posts/2024/03/create-prefab.gif">
 
