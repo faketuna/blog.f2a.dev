@@ -24,16 +24,16 @@
     
   
 
-  <meta name="description" content="ギミックは共有しつつも容量削減等の理由で洋服単位でアバターを分けたいって思ったことありますよね? 私はあります。 その悩みを解決する方法を今日は書いていきたいと思います。 Prefab Variantとは?Unity公式では以下のように説明されています。  プレハブバリアントは、一揃いの事前定義されたプレハブのバリエーションを使用したい場合に便利です。  どういう事？ってなるかもしれませんが要は、">
+  <meta name="description" content="ギミックは共有しつつも容量削減等の理由で洋服単位でアバターを分けたいって思ったことありますよね? 私はあります。 その悩みを解決する方法を今日は書いていきたいと思います。 目次 目次 Prefab Variantとは? なにはともあれやってみよう 1. 改変用のPrefabを作る 2. 作ったPrefabを改変する 3. 改変したPrefabを上書き保存する 4. 洋服なしのPrefab Vari">
 <meta property="og:type" content="article">
 <meta property="og:title" content="アバターをPrefab Variant化してギミックはそのままに衣装ごとにアバターを分ける">
 <meta property="og:url" content="https://blog.f2a.dev/2024/03/24/vrchat-split-avatar-with-prefab-variant/index.html">
 <meta property="og:site_name" content="tunaの雑記">
-<meta property="og:description" content="ギミックは共有しつつも容量削減等の理由で洋服単位でアバターを分けたいって思ったことありますよね? 私はあります。 その悩みを解決する方法を今日は書いていきたいと思います。 Prefab Variantとは?Unity公式では以下のように説明されています。  プレハブバリアントは、一揃いの事前定義されたプレハブのバリエーションを使用したい場合に便利です。  どういう事？ってなるかもしれませんが要は、">
+<meta property="og:description" content="ギミックは共有しつつも容量削減等の理由で洋服単位でアバターを分けたいって思ったことありますよね? 私はあります。 その悩みを解決する方法を今日は書いていきたいと思います。 目次 目次 Prefab Variantとは? なにはともあれやってみよう 1. 改変用のPrefabを作る 2. 作ったPrefabを改変する 3. 改変したPrefabを上書き保存する 4. 洋服なしのPrefab Vari">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/faketuna.png">
 <meta property="article:published_time" content="2024-03-24T07:47:56.000Z">
-<meta property="article:modified_time" content="2024-03-24T09:52:00.971Z">
+<meta property="article:modified_time" content="2024-03-27T15:35:22.474Z">
 <meta property="article:author" content="faketuna">
 <meta property="article:tag" content="Unity">
 <meta property="article:tag" content="VRChat">
@@ -157,19 +157,24 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
-            <a class="category-link" href="/categories/DTM/">
-                DTM
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E9%9B%91%E8%A8%98/">
                 雑記
                 <div class="category-count">3</div>
             </a>
         
+            <a class="category-link" href="/categories/DTM/">
+                DTM
+                <div class="category-count">1</div>
+            </a>
+        
             <a class="category-link" href="/categories/Unity/">
                 Unity
                 <div class="category-count">5</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Programming/">
+                Programming
+                <div class="category-count">1</div>
             </a>
         </div>
     </div>
@@ -181,7 +186,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Arturia/" rel="tag">Arturia</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/DAW/" rel="tag">DAW</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/FL-Studio/" rel="tag">FL Studio</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Game/" rel="tag">Game</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/MIDI/" rel="tag">MIDI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/OSC/" rel="tag">OSC</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Prefab/" rel="tag">Prefab</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Prefab-variant/" rel="tag">Prefab variant</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Scripting/" rel="tag">Scripting</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Steam/" rel="tag">Steam</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Unity/" rel="tag">Unity</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/VRChat/" rel="tag">VRChat</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/error/" rel="tag">error</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/heartrate/" rel="tag">heartrate</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/iphone/" rel="tag">iphone</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/miband/" rel="tag">miband</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/pulsoid/" rel="tag">pulsoid</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/unity/" rel="tag">unity</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/world/" rel="tag">world</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Arturia/" rel="tag">Arturia</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Cargo/" rel="tag">Cargo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Clap/" rel="tag">Clap</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Crate/" rel="tag">Crate</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/DAW/" rel="tag">DAW</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/FL-Studio/" rel="tag">FL Studio</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Game/" rel="tag">Game</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/MIDI/" rel="tag">MIDI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/OSC/" rel="tag">OSC</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Prefab/" rel="tag">Prefab</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Prefab-variant/" rel="tag">Prefab variant</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Rust/" rel="tag">Rust</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Scripting/" rel="tag">Scripting</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Steam/" rel="tag">Steam</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Unity/" rel="tag">Unity</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/VRChat/" rel="tag">VRChat</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/error/" rel="tag">error</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/heartrate/" rel="tag">heartrate</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/iphone/" rel="tag">iphone</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/miband/" rel="tag">miband</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/pulsoid/" rel="tag">pulsoid</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/unity/" rel="tag">unity</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/world/" rel="tag">world</a></li></ul>
     </div>
   </div>
 
@@ -195,7 +200,7 @@
       
         <a class="archive-link" href="/archives/2024/03 ">
           March 2024 
-          <div class="archive-count">1 </div>
+          <div class="archive-count">2 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/02 ">
@@ -224,6 +229,12 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
+          <a class="recent-link" href="/2024/03/27/2024/03/rust-got-stuck-in-dependency/" title="Rustの依存関係で詰まった話" >
+            <div class="recent-link-text">
+              Rustの依存関係で詰まった話
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2024/03/24/vrchat-split-avatar-with-prefab-variant/" title="アバターをPrefab Variant化してギミックはそのままに衣装ごとにアバターを分ける" >
             <div class="recent-link-text">
               アバターをPrefab Variant化してギミックはそのままに衣装ごとにアバターを分ける
@@ -245,12 +256,6 @@
           <a class="recent-link" href="/2024/01/18/unity-trouble-shoot-script-intelli-sense-not-working/" title="Unityでスクリプトを作ろうとした際に、依存したいスクリプトの補完をつけるのに苦労した話" >
             <div class="recent-link-text">
               Unityでスクリプトを作ろうとした際に、依存したいスクリプトの補完をつけるのに苦労した話
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/01/10/vrchat-trouble-shoot-world-build-win32exception/" title="VRChatのワールドをテストしたい時にwin32exceptionが出てBuild & Test new Buildがうまく行かない" >
-            <div class="recent-link-text">
-              VRChatのワールドをテストしたい時にwin32exceptionが出てBuild &amp; Test new Buildがうまく行かない
             </div>
           </a>
         
@@ -297,7 +302,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.4k words 
+            1.5k words 
           </div>
         </div>
         
@@ -308,6 +313,24 @@
         
           <p>ギミックは共有しつつも容量削減等の理由で洋服単位でアバターを分けたいって思ったことありますよね? 私はあります。</p>
 <p>その悩みを解決する方法を今日は書いていきたいと思います。</p>
+<h2 id="目次"><a href="#目次" class="headerlink" title="目次"></a>目次</h2><ul>
+<li><a href="#%E7%9B%AE%E6%AC%A1">目次</a></li>
+<li><a href="#Prefab-Variant%E3%81%A8%E3%81%AF">Prefab Variantとは?</a></li>
+<li><a href="#%E3%81%AA%E3%81%AB%E3%81%AF%E3%81%A8%E3%82%82%E3%81%82%E3%82%8C%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86">なにはともあれやってみよう</a><ul>
+<li><a href="#1-%E6%94%B9%E5%A4%89%E7%94%A8%E3%81%AEPrefab%E3%82%92%E4%BD%9C%E3%82%8B">1. 改変用のPrefabを作る</a></li>
+<li><a href="#2-%E4%BD%9C%E3%81%A3%E3%81%9FPrefab%E3%82%92%E6%94%B9%E5%A4%89%E3%81%99%E3%82%8B">2. 作ったPrefabを改変する</a></li>
+<li><a href="#3-%E6%94%B9%E5%A4%89%E3%81%97%E3%81%9FPrefab%E3%82%92%E4%B8%8A%E6%9B%B8%E3%81%8D%E4%BF%9D%E5%AD%98%E3%81%99%E3%82%8B">3. 改変したPrefabを上書き保存する</a></li>
+<li><a href="#4-%E6%B4%8B%E6%9C%8D%E3%81%AA%E3%81%97%E3%81%AEPrefab-Variant%E3%82%92%E4%BD%9C%E3%82%8B-%E4%BB%BB%E6%84%8F">4. 洋服なしのPrefab Variantを作る (任意)</a></li>
+<li><a href="#5-%E3%83%99%E3%83%BC%E3%82%B9%E3%81%A8%E3%81%AA%E3%82%8BPrefab%E3%81%8B%E3%82%89Prefab-Variant%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B">5. ベースとなるPrefabからPrefab Variantを作成する</a></li>
+<li><a href="#6-%E4%BD%9C%E3%81%A3%E3%81%9FPrefab-Variant%E3%81%AB%E6%B4%8B%E6%9C%8D%E3%82%92%E7%9D%80%E3%81%9B%E3%82%8B">6. 作ったPrefab Variantに洋服を着せる</a></li>
+<li><a href="#7-%E3%81%82%E3%82%8C-%E3%82%AE%E3%83%9F%E3%83%83%E3%82%AF%E3%81%AF">7. あれ? ギミックは…?</a></li>
+<li><a href="#8-%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AEPrefab%E3%81%AB%E3%82%AE%E3%83%9F%E3%83%83%E3%82%AF%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B">8. ベースのPrefabにギミックを追加する。</a></li>
+<li><a href="#9-Prefab-Variant%E3%81%AE%E6%96%B9%E3%81%AB%E3%82%82%E5%A4%89%E6%9B%B4%E3%81%8C%E9%81%A9%E7%94%A8%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%81%8B%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B">9. Prefab Variantの方にも変更が適用されているか確認する</a></li>
+<li><a href="#10-%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89">10. アップロード</a></li>
+<li><a href="#%E3%81%8A%E3%82%8F%E3%82%8A">おわり</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="Prefab-Variantとは"><a href="#Prefab-Variantとは" class="headerlink" title="Prefab Variantとは?"></a>Prefab Variantとは?</h2><p>Unity公式では以下のように説明されています。</p>
 <blockquote>
 <p>プレハブバリアントは、一揃いの事前定義されたプレハブのバリエーションを使用したい場合に便利です。</p>
@@ -320,6 +343,7 @@
 <ol>
 <li>元のアバターをヒエラルキーに入れる</li>
 <li>ヒエラルキーにあるアバターをPrefabを保存したい場所でドラッグアンドドロップ</li>
+<li>Original Prefabとして保存</li>
 </ol>
 <img style=" display: inline-block" src="/images/posts/2024/03/create-prefab.gif">
 
@@ -397,10 +421,15 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2024/03/27/2024/03/rust-got-stuck-in-dependency/"
+      title="Rustの依存関係で詰まった話"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        Rustの依存関係で詰まった話
         
     </p>
   </a>
