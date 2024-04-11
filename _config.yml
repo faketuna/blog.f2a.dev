@@ -6,7 +6,7 @@ author: faketuna
 language: en
 timezone: ''
 url: https://blog.f2a.dev
-permalink: ':year/:month/:title/'
+permalink: ':title/'
 permalink_defaults: null
 pretty_urls:
   trailing_index: true
