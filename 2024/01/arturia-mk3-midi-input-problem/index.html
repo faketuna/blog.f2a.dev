@@ -14,7 +14,7 @@
   
 
   
-  <title>VRChatのワールドをテストしたい時にwin32exceptionが出てBuild &amp; Test new Buildがうまく行かない | tunaの雑記</title>
+  <title>Arturia社製 Minilab mk3のMIDI関連でちょっと詰まった | tunaの雑記</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -24,22 +24,21 @@
     
   
 
-  <meta name="description" content="結論Build &amp; Test new Buildじゃなくて大人しくBuild and Uploadすれば解決した 多分壊れてるのか知らないけど、どう頑張ってもBuild &amp; Test new Buildが自分の環境だと動かなかったので大人しくアップロードしてテストしよう 追記 2024-02-19VRChatがCドライブ以外にインストールされてるとこのエラーが発生するみたい。Cドラ">
+  <meta name="description" content="何があったか購入後にFL StudioでMiniLab mk3を使うとしたら。ExpressionとPitch bendが動かなかった。 Analog Lab Vのエフェクト等の操作もフェーダーやノブで出来るはずだったのに出来なかった。 環境 Windows 10 22H2 FL Studio 21 Arturia MiniLab mk3  TL;DRExpressionとPitch bendが動">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VRChatのワールドをテストしたい時にwin32exceptionが出てBuild &amp; Test new Buildがうまく行かない">
-<meta property="og:url" content="https://blog.f2a.dev/2024/01/10/vrchat-trouble-shoot-world-build-win32exception/index.html">
+<meta property="og:title" content="Arturia社製 Minilab mk3のMIDI関連でちょっと詰まった">
+<meta property="og:url" content="https://blog.f2a.dev/2024/01/arturia-mk3-midi-input-problem/index.html">
 <meta property="og:site_name" content="tunaの雑記">
-<meta property="og:description" content="結論Build &amp; Test new Buildじゃなくて大人しくBuild and Uploadすれば解決した 多分壊れてるのか知らないけど、どう頑張ってもBuild &amp; Test new Buildが自分の環境だと動かなかったので大人しくアップロードしてテストしよう 追記 2024-02-19VRChatがCドライブ以外にインストールされてるとこのエラーが発生するみたい。Cドラ">
+<meta property="og:description" content="何があったか購入後にFL StudioでMiniLab mk3を使うとしたら。ExpressionとPitch bendが動かなかった。 Analog Lab Vのエフェクト等の操作もフェーダーやノブで出来るはずだったのに出来なかった。 環境 Windows 10 22H2 FL Studio 21 Arturia MiniLab mk3  TL;DRExpressionとPitch bendが動">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/faketuna.png">
-<meta property="article:published_time" content="2024-01-10T04:29:56.000Z">
-<meta property="article:modified_time" content="2024-03-20T23:53:41.230Z">
+<meta property="article:published_time" content="2024-01-03T23:04:50.000Z">
+<meta property="article:modified_time" content="2024-03-20T23:53:41.207Z">
 <meta property="article:author" content="faketuna">
-<meta property="article:tag" content="VRChat">
-<meta property="article:tag" content="error">
-<meta property="article:tag" content="troubleshoot">
-<meta property="article:tag" content="unity">
-<meta property="article:tag" content="world">
+<meta property="article:tag" content="Arturia">
+<meta property="article:tag" content="FL Studio">
+<meta property="article:tag" content="DAW">
+<meta property="article:tag" content="MIDI">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://github.com/faketuna.png">
   
@@ -158,14 +157,14 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
-            <a class="category-link" href="/categories/DTM/">
-                DTM
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E9%9B%91%E8%A8%98/">
                 雑記
                 <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/DTM/">
+                DTM
+                <div class="category-count">1</div>
             </a>
         
             <a class="category-link" href="/categories/Unity/">
@@ -225,31 +224,31 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/03/24/vrchat-split-avatar-with-prefab-variant/" title="アバターをPrefab Variant化してギミックはそのままに衣装ごとにアバターを分ける" >
+          <a class="recent-link" href="/2024/03/vrchat-split-avatar-with-prefab-variant/" title="アバターをPrefab Variant化してギミックはそのままに衣装ごとにアバターを分ける" >
             <div class="recent-link-text">
               アバターをPrefab Variant化してギミックはそのままに衣装ごとにアバターを分ける
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/02/26/vrchat-avatar-osc-not-work/" title="VRChatで既存アバターに追加したOSCギミックが動かない！" >
+          <a class="recent-link" href="/2024/02/vrchat-avatar-osc-not-work/" title="VRChatで既存アバターに追加したOSCギミックが動かない！" >
             <div class="recent-link-text">
               VRChatで既存アバターに追加したOSCギミックが動かない！
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/02/23/school-labyrinth-cannot-join-to-multiplayer/" title="迷宮校舎 School Labyrinthで「見つかりませんでした」が出てマルチプレイヤーに参加できない問題の解決策" >
+          <a class="recent-link" href="/2024/02/school-labyrinth-cannot-join-to-multiplayer/" title="迷宮校舎 School Labyrinthで「見つかりませんでした」が出てマルチプレイヤーに参加できない問題の解決策" >
             <div class="recent-link-text">
               迷宮校舎 School Labyrinthで「見つかりませんでした」が出てマルチプレイヤーに参加できない問題の解決策
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/01/18/unity-trouble-shoot-script-intelli-sense-not-working/" title="Unityでスクリプトを作ろうとした際に、依存したいスクリプトの補完をつけるのに苦労した話" >
+          <a class="recent-link" href="/2024/01/unity-trouble-shoot-script-intelli-sense-not-working/" title="Unityでスクリプトを作ろうとした際に、依存したいスクリプトの補完をつけるのに苦労した話" >
             <div class="recent-link-text">
               Unityでスクリプトを作ろうとした際に、依存したいスクリプトの補完をつけるのに苦労した話
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/01/10/vrchat-trouble-shoot-world-build-win32exception/" title="VRChatのワールドをテストしたい時にwin32exceptionが出てBuild & Test new Buildがうまく行かない" >
+          <a class="recent-link" href="/2024/01/vrchat-trouble-shoot-world-build-win32exception/" title="VRChatのワールドをテストしたい時にwin32exceptionが出てBuild & Test new Buildがうまく行かない" >
             <div class="recent-link-text">
               VRChatのワールドをテストしたい時にwin32exceptionが出てBuild &amp; Test new Buildがうまく行かない
             </div>
@@ -266,7 +265,7 @@
     <div id="content-body">
        
 
-<article id="post-vrchat-trouble-shoot-world-build-win32exception" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-arturia-mk3-midi-input-problem" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -279,7 +278,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        VRChatのワールドをテストしたい時にwin32exceptionが出てBuild &amp; Test new Buildがうまく行かない
+        Arturia社製 Minilab mk3のMIDI関連でちょっと詰まった
       </h1>
     
   
@@ -287,29 +286,48 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2024-01-10T04:29:56.000Z" itemprop="datePublished">2024-01-10</time>
+  <time class="dt-published" datetime="2024-01-03T23:04:50.000Z" itemprop="datePublished">2024-01-04</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/Unity/">Unity</a>
+  <a class="meta-cate-link" href="/categories/DTM/">DTM</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            143 words 
+            480 words 
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VRChat/" rel="tag">VRChat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/error/" rel="tag">error</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/troubleshoot/" rel="tag">troubleshoot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unity/" rel="tag">unity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/world/" rel="tag">world</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Arturia/" rel="tag">Arturia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DAW/" rel="tag">DAW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FL-Studio/" rel="tag">FL Studio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MIDI/" rel="tag">MIDI</a></li></ul>
 
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p><code>Build &amp; Test new Build</code>じゃなくて大人しく<code>Build and Upload</code>すれば解決した</p>
-<p>多分壊れてるのか知らないけど、どう頑張っても<code>Build &amp; Test new Build</code>が自分の環境だと動かなかったので大人しくアップロードしてテストしよう</p>
-<h1 id="追記-2024-02-19"><a href="#追記-2024-02-19" class="headerlink" title="追記 2024-02-19"></a>追記 2024-02-19</h1><p>VRChatがCドライブ以外にインストールされてるとこのエラーが発生するみたい。Cドライブにインストールし直したらエラーは出なくなったが、自分の環境だとテスト用のVRChatは起動しなかった。</p>
+          <h1 id="何があったか"><a href="#何があったか" class="headerlink" title="何があったか"></a>何があったか</h1><p>購入後にFL StudioでMiniLab mk3を使うとしたら。ExpressionとPitch bendが動かなかった。</p>
+<p>Analog Lab Vのエフェクト等の操作もフェーダーやノブで出来るはずだったのに出来なかった。</p>
+<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><ul>
+<li>Windows 10 22H2</li>
+<li>FL Studio 21</li>
+<li>Arturia MiniLab mk3</li>
+</ul>
+<h1 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h1><p>ExpressionとPitch bendが動かない問題は<a target="_blank" rel="noopener" href="https://www.arturia.com/products/hybrid-synths/minilab-3/resources">Arturiaの公式サイト</a>にあるDaw Integration Scriptを導入</p>
+<p>Analog Lab Vのエフェクト操作などをフェーダーやノブで出来るようにするには、MIDI Input portを10に設定し、MIDIキーボード側のモードをArturiaにすればOK</p>
+<h1 id="Daw-Integration-Scriptを導入する"><a href="#Daw-Integration-Scriptを導入する" class="headerlink" title="Daw Integration Scriptを導入する"></a>Daw Integration Scriptを導入する</h1><p>今回はFL Studioで進めていくので他のDAWの方は各自調べながら読み替えてください。</p>
+<h2 id="1-Daw-Integration-Scriptをダウンロードする"><a href="#1-Daw-Integration-Scriptをダウンロードする" class="headerlink" title="1. Daw Integration Scriptをダウンロードする"></a>1. Daw Integration Scriptをダウンロードする</h2><p><a target="_blank" rel="noopener" href="https://www.arturia.com/products/hybrid-synths/minilab-3/resources">ここ</a>の下の方にあるDaw Integration Scriptから自分のDAWに対応するものをダウンロードする。</p>
+
+
+<h2 id="2-ScriptをFL-StudioのScriptディレクトリに入れる"><a href="#2-ScriptをFL-StudioのScriptディレクトリに入れる" class="headerlink" title="2. ScriptをFL StudioのScriptディレクトリに入れる"></a>2. ScriptをFL StudioのScriptディレクトリに入れる</h2><p>ダウンロードしたZIPファイルを解凍し、解凍したZIPファイル内にある<code>FL Studio Scripts</code>ディレクトリ下にある<code>MiniLab3</code>ディレクトリを以下のディレクトリに入れてあげる</p>
+<p>Windowsの場合は<br><code>C:\Users\&lt;ユーザー名&gt;\Documents\Image-Line\FL Studio\Settings\Hardware\</code></p>
+<p>Macの場合は<br><code>/Users/&lt;ユーザー名&gt;/Documents/Image-Line/FL Studio/Settings/Hardware/</code></p>
+<h2 id="3-MIDIのController-Typeを変更する"><a href="#3-MIDIのController-Typeを変更する" class="headerlink" title="3. MIDIのController Typeを変更する"></a>3. MIDIのController Typeを変更する</h2><p>MIDI Settingsを開いて、Inputの欄から<code>MiniLab3 MIDI</code>を選択し<code>Controller type</code>を<code>MiniLab3</code>か<code>Arturia MiniLab 3</code>を選択</p>
+
+
+<h2 id="4-Expressionとかが動いてるか確認"><a href="#4-Expressionとかが動いてるか確認" class="headerlink" title="4. Expressionとかが動いてるか確認"></a>4. Expressionとかが動いてるか確認</h2><p>MIDIキーボード側のモードを<code>SHIFT+PAD 3</code>でDAWに変更し、動いていれば完了！</p>
+<h1 id="Analog-Lab-Vのエフェクト等の操作を出来るようにする"><a href="#Analog-Lab-Vのエフェクト等の操作を出来るようにする" class="headerlink" title="Analog Lab Vのエフェクト等の操作を出来るようにする"></a>Analog Lab Vのエフェクト等の操作を出来るようにする</h1><p>FL Studioで音源の設定を開いて、MIDIのInput portを10に設定してあげればOK。</p>
+<p>あとは、MIDIキーボード側のモードを<code>SHIFT+PAD 3</code>でArturiaに変更して動いていれば完了！</p>
 
         
       </div>
@@ -324,25 +342,25 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2024/01/18/unity-trouble-shoot-script-intelli-sense-not-working/"
-      title="Unityでスクリプトを作ろうとした際に、依存したいスクリプトの補完をつけるのに苦労した話"
+      href="/2024/01/vrchat-trouble-shoot-world-build-win32exception/"
+      title="VRChatのワールドをテストしたい時にwin32exceptionが出てBuild & Test new Buildがうまく行かない"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        Unityでスクリプトを作ろうとした際に、依存したいスクリプトの補完をつけるのに苦労した話
+        VRChatのワールドをテストしたい時にwin32exceptionが出てBuild &amp; Test new Buildがうまく行かない
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2024/01/04/arturia-mk3-midi-input-problem/"
-      title="Arturia社製 Minilab mk3のMIDI関連でちょっと詰まった"
+      href="/2023/12/github-forget-organization-notification/"
+      title="GitHubでOrganizationの通知を有効にし忘れてIssueを1ヶ月放置した話"
      >
 
     <p class="title-text">
       
-        Arturia社製 Minilab mk3のMIDI関連でちょっと詰まった
+        GitHubでOrganizationの通知を有効にし忘れてIssueを1ヶ月放置した話
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
