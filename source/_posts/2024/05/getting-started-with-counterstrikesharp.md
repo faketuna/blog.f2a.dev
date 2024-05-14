@@ -118,6 +118,6 @@ namespace VeryNicePlugin {
 
 ## 6. サーバーに導入
 
-`<ProjectName>.dll`をサーバーのPluginsにコピーしてあげれば勝手にホットリロードされる。
+`<ProjectName>.dll`をサーバーのPluginsにコピーしてあげれば勝手にホットリロードされます。
 
 入れる際は、`plugins/<ProjectName>/<ProjectName>.dll`としないと読み込まれないので注意
