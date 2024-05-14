@@ -38,6 +38,10 @@ date: 2024-05-13 15:20:06
 
 # サーバーの環境構築
 
+## 0. Windows環境の場合
+
+[Visual Studio再頒布可能パッケージ](https://aka.ms/vs/17/release/vc_redist.x64.exe)がないとWindowsのサーバーでは動作しないのでインストールしておいてください。
+
 ## 1. SteamCMDからCounterStrike2をインストールする
 
 1. https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip から`steamcmd.zip`をダウンロード
