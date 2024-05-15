@@ -46,7 +46,7 @@ date: 2024-05-13 15:20:06
 
 1. https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip から`steamcmd.zip`をダウンロード
 2. `steamcmd.zip`を解凍
-3. 中にある`steamcmd.zip`を実行
+3. 中にある`steamcmd.exe`を実行
 4. `force_install_dir <インストール先>`でインストール先を指定
 5. `login anonymous` でログイン
 6. `app_update 730` でインストール開始
@@ -97,7 +97,7 @@ dotnet add package CounterStrikeSharp.API
 
 ## 4. とりあえずHello Worldしておく
 
-以下のようなコードでHello World出来ます。
+以下のようなコードで適当に`helloworld.cs`とかで保存すればHello World出来ます。
 
 ```csharp
 namespace VeryNicePlugin {
